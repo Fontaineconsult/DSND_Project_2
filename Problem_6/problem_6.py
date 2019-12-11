@@ -36,3 +36,11 @@ l = [i for i in range(0, 2)]  # a list containing 0 - 1
 random.shuffle(l)
 
 print ("Pass" if ((0, 1) == min_max(l)) else "Fail")
+
+
+
+# Test 3
+l = [i for i in range(-8, 10)]  # a list containing 0 - 1
+random.shuffle(l)
+
+print ("Pass" if ((-8, 9) == min_max(l)) else "Fail")
