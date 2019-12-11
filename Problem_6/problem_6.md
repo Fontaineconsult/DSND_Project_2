@@ -3,5 +3,9 @@ we first assign the first index in the array to two variables, min and max. We t
 and update min if the current value is less and max if the current value is greater.
 
 Since we only iterate through the list once, our complexity is O(N)
+Space complexity is also O(N) for the size of the input list
+
+
+
 
  

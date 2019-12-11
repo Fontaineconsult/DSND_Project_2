@@ -9,6 +9,7 @@ class RouteTrieNode:
 
 
 class RouteTrie:
+
     def __init__(self, hanlder=None):
         self.root = RouteTrieNode(hanlder)
 
@@ -22,7 +23,6 @@ class RouteTrie:
             current_node = current_node.children[path]
 
         current_node.handler = handler
-
 
     def find(self, paths):
 
@@ -40,8 +40,10 @@ class RouteTrie:
             return current_node.handler
 
 class Router:
-    def __init__(self):
-        self.routes = RouteTrie("Root Handler")
+
+    def __init__(self, root, not_found):
+        self.routes = RouteTrie(root)
+        self.not_found = not_found
 
     def add_handler(self, path, handler):
         self.routes.insert(self.split_path(path), handler)
@@ -54,7 +56,7 @@ class Router:
         if handler:
             return handler
         else:
-            return 404, "Not Found"
+            return self.not_found
 
 
     def split_path(self, path):
@@ -62,8 +64,8 @@ class Router:
 
 
 # create the router and add a route
-router = Router() # remove the 'not found handler' if you did not implement this
-router.add_handler("/home/about", "about handler")  # add a route
+router = Router("Root Handler", "404: Not Found")
+router.add_handler("/home/about", "about handler")
 
 # some lookups with the expected output
 print(router.lookup("/")) # should print 'root handler'

@@ -1,6 +1,11 @@
 
 def sort_012(input_list):
 
+    if len(input_list) == 0:
+        return []
+
+
+
 
     start = 0
     mid = 0
@@ -26,7 +31,7 @@ def sort_012(input_list):
 
         else:
             mid += 1
-
+    print(input_list)
     return input_list
 
 
@@ -41,5 +46,5 @@ def test_function(test_case):
 test_function([0, 0, 2, 2, 2, 1, 1, 1, 2, 0, 2])
 test_function([2, 1, 2, 0, 0, 2, 1, 0, 1, 0, 0, 2, 2, 2, 1, 2, 0, 0, 0, 2, 1, 0, 2, 0, 0, 1])
 test_function([0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2])
-
-
+test_function([2, 2, 2, 1, 1, 1, 2, 2])
+test_function([])

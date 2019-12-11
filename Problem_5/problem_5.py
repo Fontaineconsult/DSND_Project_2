@@ -9,17 +9,19 @@ class TrieNode:
     def suffixes(self):
 
         suffixes = []
+
         for key, value in self.children.items():
 
-            suffixes = self._recurse_trie(value , key)
+            suffixes = self._recurse_trie(value, key, '', suffixes)
 
         return suffixes
 
-    def _recurse_trie(self, node, key, suffix='', suffixes=[]):
+    def _recurse_trie(self, node, key, suffix, suffixes):
 
         suffix += key
 
         if node.is_word:
+
             suffixes.append(suffix)
 
         for key, value in node.children.items():
@@ -48,6 +50,9 @@ class Trie:
         current_node = self.root
         word = ''
 
+        if prefix == "":
+            return None
+
         for char in prefix:
             if char in current_node.children:
 
@@ -55,13 +60,13 @@ class Trie:
                 word += char
 
             elif char not in current_node.children:
+                return None
 
-                return False
         if current_node.is_word:
 
-            return word
+            return current_node
         else:
-            return current_node.suffixes()
+            return current_node
 
     def walk_trie(self):
 
@@ -71,10 +76,9 @@ class Trie:
     def _recurse_walk(self, node):
         for char in node.children.keys():
             if node.is_word:
-
                 return True
             self._recurse_walk(node.children[char])
-            return False
+            return None
 
 
 MyTrie = Trie()
@@ -90,6 +94,28 @@ for word in wordList:
     MyTrie.insert(word)
 
 
-print(MyTrie.find("facticity"))
-print(MyTrie.find("tri"))
-print(MyTrie.find("fluffy"))
+ant = MyTrie.find("ant")
+print(ant.suffixes(), ant.is_word)
+
+an = MyTrie.find("an")
+print(an.suffixes(), an.is_word)
+
+facticity = MyTrie.find("facticity")
+print(facticity.suffixes(), facticity.is_word)
+
+tri = MyTrie.find("tri")
+print(tri.suffixes(), tri.is_word)
+
+
+fluffy = MyTrie.find("fluffy")
+if fluffy:
+    print(fluffy.suffixes(), fluffy.is_word)
+else:
+    print(fluffy)
+
+empty = MyTrie.find("")
+if empty:
+    print(empty.suffixes(), empty.is_word)
+else:
+    print(empty)
+

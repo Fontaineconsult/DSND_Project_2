@@ -1,7 +1,7 @@
+import math
 
 
 def sqrt_recursive(target, guess):
-
 
     if guess ** 2 - target >= 0 and guess ** 2 - target <= 1.0:
 
@@ -11,17 +11,24 @@ def sqrt_recursive(target, guess):
 
     return sqrt_recursive(target, new_guess)
 
-
-
 def sqrt(num):
 
-    if num < 1:
+    if num >= 0 and num < 1:
         return 0
+    if num < 0:
+        return math.nan
+
     return sqrt_recursive(num, 1)
 
 
+print ("Pass" if (35 == sqrt(1247)) else "Fail")
 print ("Pass" if  (3 == sqrt(9)) else "Fail")
 print ("Pass" if  (0 == sqrt(0)) else "Fail")
 print ("Pass" if  (4 == sqrt(16)) else "Fail")
 print ("Pass" if  (1 == sqrt(1)) else "Fail")
 print ("Pass" if  (100 == sqrt(10000)) else "Fail")
+print ("Pass" if (math.isnan(sqrt(-9))) else "Fail")
+
+
+
+

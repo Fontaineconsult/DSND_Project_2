@@ -8,4 +8,6 @@ the current value to the end of the list and move the end index down. And if the
 it is. 
 
 This operation only requires a single traversal of the list. Therefore this algorithm has is O(N).
+Space complexity is O(N) for the size of the input list.
+
 
