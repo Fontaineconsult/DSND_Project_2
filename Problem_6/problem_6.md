@@ -2,7 +2,7 @@ In problem 6 we need to find the smallest and largest elements in a random array
 we first assign the first index in the array to two variables, min and max. We then iterate through the list
 and update min if the current value is less and max if the current value is greater.
 
-Since we only iterate through the list once, our complexity is O(N)
+Since we only iterate through the list once, our complexity is O(N) where N is the length of the list
 Space complexity is also O(N) for the size of the input list
 
 
