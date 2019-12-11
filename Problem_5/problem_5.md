@@ -10,7 +10,9 @@ Big O of the find method depends on the size of the Trie (how many words are sto
 where N is the size of the input string. Recursing the trie is O(M), where M is the number of remaining paths
 in the Trie after we have reached the end of our input string as we must walk the entire remainder of the Trie.
 
-We can say Trie walking is O(N)
+We can say Trie walking is O(N+M). Where N is the length of the search string and M is the remainder
+of the Trie.
+
 Space complexity is O(M) where M is the number of nodes. The number of nodes is determined by
 the number of unique prefixes in our wordbank.
 

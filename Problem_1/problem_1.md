@@ -9,6 +9,6 @@ Problem 1 utilizes a simple recursive function.
  again. Eventually the guess number will be within 0 and 1 of the square root.
  We return the floor of the guess.
  
-Time complexity is O(Log N).
+Time complexity is O(Log N). Where N is the size of the input number.
 Space complexity is also O(Log N) where Log N is the size of the recursive stack and N is the input number.
 

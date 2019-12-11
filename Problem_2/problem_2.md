@@ -15,7 +15,7 @@ pivot depending on whether the search value is within that side.
 
 
 Complexity is O(log n) as binary search is log N as each search searches
-half the original amount.
+half the original amount of the input for each loop iteration.
 
 Space complexity is O(M) where M is the size of the rotated array.
 

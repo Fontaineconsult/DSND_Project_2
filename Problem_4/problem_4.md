@@ -7,7 +7,7 @@ we move the current value to the start of the list and move the mid value index 
 the current value to the end of the list and move the end index down. And if the current value is equal to the mid value, we leave it where
 it is. 
 
-This operation only requires a single traversal of the list. Therefore this algorithm has is O(N).
+This operation only requires a single traversal of the list. Therefore this algorithm has is O(N). Where N is the size of the list.
 Space complexity is O(N) for the size of the input list.
 
 
